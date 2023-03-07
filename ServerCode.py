@@ -21,3 +21,15 @@ LocHost = "localhost"
 LocPort = "5555"
 FileLog = "File_log.txt"
 Encrypt_key = b"password"
+
+# Establish a socket object (i.e. a communication end point)
+ser_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Next we make a connecting between the network socket with
+# a local network address and port number.
+ser_socket.bind((LocHost, LocPort))
+
+# Next, we enable the server to detect incoming connections.
+ser_socket.listen()
+print(
+    f"Server is actively listening on [Host: {LocHost}] and [Port:{LocPort}]")
