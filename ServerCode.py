@@ -18,7 +18,7 @@ import os
 # The encryption key will be used to to encrypt the dict.
 
 LocHost = "localhost"
-LocPort = "5555"
+LocPort = 5555
 FileLog = "File_log.txt"
 Encrypt_key = b"password"
 
