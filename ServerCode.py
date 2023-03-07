@@ -11,3 +11,13 @@ import pickle
 import json
 import xml.etree.cElementTree as ElTree
 import os
+
+# Declaring the local hist and port variables that the Server
+# will be attempting to detect. FileLog enables the content
+# to be printed onto a file per the project specification.
+# The encryption key will be used to to encrypt the dict.
+
+LocHost = "localhost"
+LocPort = "5555"
+FileLog = "File_log.txt"
+Encrypt_key = b"password"
