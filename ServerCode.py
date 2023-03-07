@@ -33,3 +33,11 @@ ser_socket.bind((LocHost, LocPort))
 ser_socket.listen()
 print(
     f"Server is actively listening on [Host: {LocHost}] and [Port:{LocPort}]")
+
+while True:
+    # Connecting to a client call
+    cli_socket, cli_address = ser_socket.accept()
+    print(f"Connection has been established with {cli_address}")
+
+    # close connection with client
+    cli_socket.close()

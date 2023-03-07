@@ -11,9 +11,13 @@ import json
 import xml.etree.cElementTree as ElTree
 
 # Declaring the local host and port variables that the Server
-# will be attempting to detect. FileLog enables the content
-# to be printed onto a file per the project specification.
-# The encryption key will be used to to encrypt the dict.
+# will be attempting to detect.
 
 LocHost = "localhost"
 LocPort = 5555
+
+# Creating a socket object from the client side.
+cli_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Connecting to the server call we processed earlier.
+cli_socket.connect((LocHost, LocPort))
