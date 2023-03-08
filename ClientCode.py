@@ -62,7 +62,7 @@ with open("Send_Text_file.txt", "rb") as file:
         file_info = file.read(5000)
         if not file_info:
             break
-    cli_socket.sendall(file_info)
+        cli_socket.sendall(file_info)
 
 print("All items sent to server")
 
