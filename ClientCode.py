@@ -23,8 +23,32 @@ cli_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 cli_socket.connect((LocHost, LocPort))
 
 # Creating Dictionary as per project specifications
-Dict = {"Project Manager": "Timothy Poon",
-        "Software Engineer": "Saad Syed",
-        "Software Test": "Timothy Poon",
-        "Software Architect": "Saad Syed"
+dict = {"Project Manager: ": "Timothy Poon",
+        "Software Engineer: ": "Saad Syed",
+        "Software Testing: ": "Timothy Poon",
+        "Software Architect: ": "Saad Syed"
         }
+
+# The following block of code will allow the user to select the
+# format as between JSON, binary, and XML. The user will select
+# between numbers 1 to 3 from which. Thereafter, depending on the
+# choice, we serialise the dictionary.
+
+print("Please choose the required pickling format:")
+print("1. Binary")
+print("2. JSON")
+print("3. XML")
+select_format = int(input())
+if select_format == 1:
+    dict_serialised = pickle.dumps(dict, protocol=pickle.DEFAULT_PROTOCOL)
+elif select_format == 2:
+    dict_serialised = json.dumps(dict).encode("utf-8")
+elif select_format == 3:
+    root = ElTree.Element("dictionary")
+    for pair, match in dict.items():
+        elem = ElTree.SubElement(root, pair)
+        elem.text = str(match)
+    dict_serialised = ElTree.tostring(root)
+else:
+    print("Invalid option selected")
+    exit()
