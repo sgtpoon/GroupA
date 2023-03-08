@@ -42,6 +42,26 @@ while True:
     # Next, we write code to receive the dictionary from the client
     dict_recv = cli_socket.recv(4096)
 
+    # At the moment, the dictionary data is serialised which may not
+    # make it understandable. As such, we need to deserialise it first.
+    # First, we see if the binary option was chosen as the format.
+    try:
+        ReceivedData = pickle.loads(dict_recv)
+    # next, we check to see if JSON was the chosen format
+    except:
+        try:
+            ReceivedData = json.loads(dict_recv)
+        # next, we check to see if XML was the chosen format.
+        except:
+            try:
+                formXML = ElTree.fromstring(dict_recv)
+                ReceivedData = {}
+                for item in formXML:
+                    ReceivedData[item.tag] = item.text
+            except:
+                cli_socket.close()
+                continue
+
     # Next, we write code to receive the text file from the client
     with open("Send_Text_file.txt", "wb") as file:
         while True:
