@@ -21,3 +21,10 @@ cli_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connecting to the server call we processed earlier.
 cli_socket.connect((LocHost, LocPort))
+
+# Creating Dictionary as per project specifications
+Dict = {"Project Manager": "Timothy Poon",
+        "Software Engineer": "Saad Syed",
+        "Software Test": "Timothy Poon",
+        "Software Architect": "Saad Syed"
+        }
