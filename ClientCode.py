@@ -52,3 +52,19 @@ elif select_format == 3:
 else:
     print("Invalid option selected")
     exit()
+
+# Next, we send the serealised dectionary to the server
+cli_socket.sendall(dict_serialised)
+
+# Next, we send the text file and send it to the server
+with open("Send_Text_file.txt", "rb") as file:
+    while True:
+        file_info = file.read(5000)
+        if not file_info:
+            break
+    cli_socket.sendall(file_info)
+
+print("All items sent to server")
+
+# close connection with the server
+cli_socket.close()
