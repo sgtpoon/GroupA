@@ -59,7 +59,7 @@ cli_socket.sendall(dict_serialised)
 # Next, we send the text file and send it to the server
 with open("Send_Text_file.txt", "rb") as file:
     while True:
-        file_info = file.read(5000)
+        file_info = file.read(4096)
         if not file_info:
             break
         cli_socket.sendall(file_info)

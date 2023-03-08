@@ -39,5 +39,18 @@ while True:
     cli_socket, cli_address = ser_socket.accept()
     print(f"Connection has been established with {cli_address}")
 
+    # Next, we write code to receive the dictionary from the client
+    dict_recv = cli_socket.recv(4096)
+
+    # Next, we write code to receive the text file from the client
+    with open("Send_Text_file.txt", "wb") as file:
+        while True:
+            file_info = cli_socket.recv(4096)
+            if not file_info:
+                break
+            file.write(file_info)
+
+    print("All relevant data received")
+
     # close connection with client
     cli_socket.close()
