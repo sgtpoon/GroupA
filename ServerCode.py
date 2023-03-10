@@ -19,7 +19,7 @@ import os
 
 LocHost = "localhost"
 LocPort = 5555
-FileLog = "File_log.txt"
+DataLog = "data_log.txt"
 Encrypt_key = b"password"
 
 # Establish a socket object (i.e. a communication end point)
@@ -71,6 +71,22 @@ while True:
             file.write(file_info)
 
     print("All relevant data received")
+
+    # The project specififcation also mentioned the functionality
+    # for the user to be able to print the items sent to server.
+    print("Would you like to print the information")
+    print_info = input("if so, type 'y' for yes and 'n' for no")
+    if print_info == "y":
+        print(ReceivedData)
+        with open(DataLog, "a") as file:
+            file.write(str(ReceivedData) + "\n")
+        with open("Send_Text_file.txt", "r") as file:
+            contents = file.read()
+        print(contents)
+        with open(DataLog, "a") as file:
+            file.write(contents + "\n")
+    else:
+        print("Thank you, nothing has been logged")
 
     # close connection with client
     cli_socket.close()
