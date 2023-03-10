@@ -63,7 +63,7 @@ while True:
                 continue
 
     # Next, we write code to receive the text file from the client
-    with open("Send_Text_file.txt", "wb") as file:
+    with open("Receive_Text_file.txt", "wb") as file:
         while True:
             file_info = cli_socket.recv(4096)
             if not file_info:
@@ -80,7 +80,7 @@ while True:
         print(ReceivedData)
         with open(DataLog, "a") as file:
             file.write(str(ReceivedData) + "\n")
-        with open("Send_Text_file.txt", "r") as file:
+        with open("Receive_Text_file.txt", "r") as file:
             contents = file.read()
         print(contents)
         with open(DataLog, "a") as file:

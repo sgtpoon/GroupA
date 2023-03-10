@@ -1,0 +1,13 @@
+[Per the Project Specification - this is the example file to be sent to Server]
+
+Project brief:
+1. Form a group with your classmates and assign roles to each team member. Make sure to communicate and collaborate with your group members using the End of Module Module Assignment Group Discussion Forum or Microsoft Teams.
+2. Review the resources, references, and scenario provided in the assignment to understand the requirements.
+3. Build a simple client/server network and complete the two tasks given in the assignment: create a dictionary, populate it, serialize it and send it to a server, and create a text file and send it to a server.
+4. Ensure that the user can set the pickling format to binary, JSON, or XML for the dictionary and can encrypt the text in the text file.
+5. Make sure that the server can print the contents of the sent items to the screen or a file and can handle encrypted contents.
+6. Write the code for the project according to PEP standards and use exception handling to handle potential errors. Write unit tests to ensure the code works as expected.
+7. Upload the project to a source control website, such as GitHub or GitLab. Ensure that the commits have messages that describe the changes, and the code is documented.
+8. Write a report of between 1000 and 1500 words, including your directory tree, code documentation, a Readme.md file, and a requirements.txt file, and any other documentation you see fit to include. Include the log of GitHub/GitLab push comments and code reviews.
+9. Ensure that all contents are easily accessible and upload all files, including the Meeting Minutes from all virtual meetings, to the submission area before the deadline.
+10. Complete the peer assessment form to assess yourself and each group member's contribution to the group product.
