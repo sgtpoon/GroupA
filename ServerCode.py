@@ -62,6 +62,8 @@ while True:
                 continue
 
     # Next, we write code to receive the text file from the client
+    # This will print the contents of the file sent to the server,
+    # To another text file called Receive_Text_File.txt.
     with open("Receive_Text_file.txt", "wb") as file:
         while True:
             file_info = cli_socket.recv(4096)
@@ -74,6 +76,7 @@ while True:
     # The project specififcation also mentioned the functionality
     # for the user to be able to print the items sent to server.
     # Furthermore, a separate file should also print the contents.
+    # In this case, it is called the "Receive_Text_file.txt".
     print("Would you like to print the information")
     print_info = input("if so, type 'y' for yes and 'n' for no")
     if print_info == "y":
@@ -82,7 +85,7 @@ while True:
             contents = file.read()
         print(contents)
     else:
-        print("Thank you, nothing has been logged")
+        print("Thank you, nothing will be printed")
 
     # close connection with client
     cli_socket.close()
