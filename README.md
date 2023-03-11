@@ -17,11 +17,11 @@ In order to run the Server file first, please run the command line from the Serv
 
 python ServerCode.py
 
-This file will actively listen for incoming client calls and upon establishin a connection, it will receive:
+This file will actively listen for incoming client calls and upon establishing a connection, it will receive:
 - A Dictionary
 - A Text File
 
-The User will also be given the option for the conents of the files to be printed.
+The User will also be given the option for the contents of the files to be printed.
 
 ## Step 2 - Next, please run the Client file
 
