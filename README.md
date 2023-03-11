@@ -1,4 +1,4 @@
-# End Module Assginment
+# End of Module Assginment
 
 As part of this project, students were assigned to build a simple client/server network that creates a dictionary, populates it, serializes it and sends it to a server (along with a text file). Regarding the dictionary, the user should be able to set the pickling format to either binary, JSON and XML. Also, the user will need to have the option to encrypt the text in a text file. The server should have a configurable option to print the contents of the sent items to the screen and or to a file. 
 
@@ -30,6 +30,10 @@ In order to run the Client file, please run the command line from the Client fil
 python ClientCode.py
 
 Running the above command will enable the client to create a dictionary with some data and a choice of pickling format in order to serialise the data. The client is also able to send a text file to the server from this code.
+
+## Project Contributors
+1. Timothy Poon - Project Manager and Code Tester.
+2. Saad Syed - Software Engineer and Software Architect.
 
 ## License
 
