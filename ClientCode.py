@@ -56,13 +56,29 @@ else:
 # Next, we send the serealised dectionary to the server
 cli_socket.sendall(dict_serialised)
 
-# Next, we send the text file and send it to the server
+# Give user the option to encrypt the file.
+print("Would you like to encrypt the text file?")
+encrypt_option = input("Enter 'y' for yes and 'n' for no: ")
+
+# Next, depending on the option chosen by the user regarding
+# the encryption, we either encrypt the file and send it to
+# the server, otherwise just send the original contents. I
+# had to to find a way to communicate to the server that
+# the encryption option has been chosen, hence why we see
+# the added sendall instruction that the file is "encrypted"
 with open("Send_Text_file.txt", "rb") as file:
-    while True:
-        file_info = file.read(4096)
-        if not file_info:
-            break
-        cli_socket.sendall(file_info)
+    if encrypt_option == 'y':
+        file_data = file.read()
+        encrypted_file = bytes([x ^ 5 for x in file_data])
+        cli_socket.sendall(b"encrypted")
+        cli_socket.sendall(encrypted_file)
+    else:
+        cli_socket.sendall(b"not_encrypted")
+        while True:
+            file_info = file.read(4096)
+            if not file_info:
+                break
+            cli_socket.sendall(file_info)
 
 print("All items sent to server")
 
