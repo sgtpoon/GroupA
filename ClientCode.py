@@ -1,8 +1,8 @@
 # Importing the relevant libraries to execute the server side code.
 # The socket library is used to connect the client to the server.
-# The pickle module is used to serealise and deserealise objects.
+# The pickle module is used to serialise and de-serialise objects.
 # The json module is being imported in case the client decides to
-# serealise the data in this format. The cElementree module is used
+# serialise the data in this format. The cElementree module is used
 # for the file the client sends to the server.
 
 import socket
